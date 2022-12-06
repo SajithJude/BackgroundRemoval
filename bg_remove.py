@@ -86,7 +86,7 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 
 
 # # uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-number=0
+number=1
 for uploaded_file in my_upload:
     imglst.append(uploaded_file)
     number+=1
