@@ -90,8 +90,9 @@ number=0
 for uploaded_file in my_upload:
     number+=1
     imglst.append(uploaded_file)
-    if number>=1:
-        imagear.append(uploaded_file)
+    if number>=2:
+        break
+    imagear.append(uploaded_file)
 big.append(imagear)
 big.append(imglst)
 st.write(big)
