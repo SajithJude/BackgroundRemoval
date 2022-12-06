@@ -90,7 +90,7 @@ my_upload4 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jp
 #     st.write("filename:", uploaded_file.name)
 #     st.write(bytes_data)
 
-if my_upload,my_upload2,my_upload3,my_upload4 is not None:
+if my_upload is not None:
     imageArra = []
     imageArra.append(Image.open(my_upload))
     st.write(imageArra)
