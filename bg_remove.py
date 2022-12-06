@@ -107,4 +107,4 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 if my_upload is not None:
     fix_image(upload=my_upload)
 else:
-    fix_image("./zebra.jpg")
+    fix_image("./2.jpg")
