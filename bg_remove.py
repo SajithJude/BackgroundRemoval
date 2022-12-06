@@ -90,10 +90,10 @@ number=0
 for uploaded_file in my_upload:
     if number< 2:
         number+=1
-        imglst.append(Image.open(convert_image(uploaded_file)))
+        imglst.append(Image.open(uploaded_file))
     else:
         number+=1
-        imagear.append(Image.open(convert_image(uploaded_file)))
+        imagear.append(Image.open(uploaded_file))
 
     
 big.append(imagear)
