@@ -21,19 +21,74 @@ def convert_image(img):
     return byte_im
 
 
-def fix_image(upload):
-    image1 = Image.open(upload)
-    image2 = Image.open(upload)
-    image1 = image1.resize((426, 240))
-    image1 = image1.resize((426, 240))
+def join_images(*rows, bg_color=(0, 0, 0, 0), alignment=(0.5, 0.5)):
+    rows = [
+        [image.convert('RGBA') for image in row]
+        for row
+        in rows
+    ]
 
-    image1_size = image1.size   
-    image2_size = image2.size
-    new_image = Image.new('RGB',(2*image1_size[0], image1_size[1]), (250,250,250))
-    new_image.paste(image1,(0,0))
-    new_image.paste(image2,(image1_size[0],0))
-    col1.write("Original Image :camera:")
-    col1.image(image1)
+    heights = [
+        max(image.height for image in row)
+        for row
+        in rows
+    ]
+
+    widths = [
+        max(image.width for image in column)
+        for column
+        in zip(*rows)
+    ]
+
+    tmp = Image.new(
+        'RGBA',
+        size=(sum(widths), sum(heights)),
+        color=bg_color
+    )
+
+    for i, row in enumerate(rows):
+        for j, image in enumerate(row):
+            y = sum(heights[:i]) + int((heights[i] - image.height) * alignment[1])
+            x = sum(widths[:j]) + int((widths[j] - image.width) * alignment[0])
+            tmp.paste(image, (x, y))
+
+    return tmp
+
+
+def join_images_horizontally(*row, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
+    return join_images(
+        row,
+        bg_color=bg_color,
+        alignment=alignment
+    )
+
+
+def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
+    return join_images(
+        *[[image] for image in column],
+        bg_color=bg_color,
+        alignment=alignment
+    )
+
+def fix_image(upload):
+    fixed = join_images(
+    *images,
+    bg_color='green',
+    alignment=(0.5, 0.5)
+)
+    # image1 = Image.open(upload)
+    # image2 = Image.open(upload)
+    # image1 = image1.resize((426, 240))
+    # image1 = image1.resize((426, 240))
+
+    # image1_size = image1.size   
+    # image2_size = image2.size
+    # new_image = Image.new('RGB',(*image1_size[0], image1_size[1]), (250,250,250))
+    # new_image.paste(image1,(0,0))
+    # new_image.paste(image2,(image1_size[0],0))
+    # col1.write("Original Image :camera:")
+    # col1.image(image1)
+    
 
     fixed = new_image
     col2.write("Fixed Image :wrench:")
