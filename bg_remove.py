@@ -22,11 +22,18 @@ def convert_image(img):
 
 
 def fix_image(upload):
-    image = Image.open(upload)
+    image1 = Image.open(upload)
+    image2 = Image.open(upload)
+    image1 = image1.resize((426, 240))
+    image1_size = image1.size   
+    image2_size = image2.size
+    new_image = Image.new('RGB',(2*image1_size[0], image1_size[1]), (250,250,250))
+    new_image.paste(image1,(0,0))
+    new_image.paste(image2,(image1_size[0],0))
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    fixed = remove(image)
+    fixed = new_image)
     col2.write("Fixed Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
