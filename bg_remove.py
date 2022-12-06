@@ -112,6 +112,12 @@ if uploaded_files is not None:
     bg_color='green',
     alignment=(0.5, 0.5)
     )
+        col2.write("Fixed Image :wrench:")
+        col2.image(fixed)
+        st.sidebar.markdown("\n")
+        st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
+
+
     
  
     # fix_image(upload=my_upload)
