@@ -104,7 +104,7 @@ for uploaded_file in uploaded_files:
     imagearrray.append(uploaded_file)
     # st.write(bytes_data)
 
-if uploaded_file is not None:
+if uploaded_files is not None:
     fixed = join_images(
 *images,
 bg_color='green',
