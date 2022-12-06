@@ -105,7 +105,7 @@ col1, col2 = st.columns(2)
 my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
 if my_upload is not None:
-    fix_image(upload=my_upload)
+    # fix_image(upload=my_upload)
 else:
     join_images(
 *images,
