@@ -86,14 +86,14 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 
 
 # # uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-number=1
+number=0
 for uploaded_file in my_upload:
     number+=1
     imglst.append(uploaded_file)
     if number>=3:
         break
     imagear.append(uploaded_file)
-
+    
 big.append(imagear)
 big.append(imglst)
 st.write(big)
