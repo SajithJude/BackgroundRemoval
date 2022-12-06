@@ -74,11 +74,11 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
         alignment=alignment
     )
 
-def fix_image(upload):
-    fixed = join_images(
-    *upload,
-    bg_color='green',
-    alignment=(0.5, 0.5)
+# def fix_image(upload):
+join_images(
+*upload,
+bg_color='green',
+alignment=(0.5, 0.5)
 )
     # image1 = Image.open(upload)
     # image2 = Image.open(upload)
@@ -94,11 +94,11 @@ def fix_image(upload):
     # col1.image(image1)
     
 
-    fixed = new_image
-    col2.write("Fixed Image :wrench:")
-    col2.image(fixed)
-    st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
+fixed = new_image
+col2.write("Fixed Image :wrench:")
+col2.image(fixed)
+st.sidebar.markdown("\n")
+st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
 
 
 col1, col2 = st.columns(2)
@@ -107,4 +107,8 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 if my_upload is not None:
     fix_image(upload=my_upload)
 else:
-    fix_image("./2.jpg")
+    join_images(
+*images,
+bg_color='green',
+alignment=(0.5, 0.5)
+)
