@@ -78,12 +78,12 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
 col1, col2 = st.columns(2)
 imagear = []
 my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-my_upload2 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-my_upload3 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-my_upload4 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+# my_upload2 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+# my_upload3 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+# my_upload4 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
 
-# uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+# # uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 
 # for uploaded_file in my_upload:
 #     bytes_data = uploaded_file.read()
