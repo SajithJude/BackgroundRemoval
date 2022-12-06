@@ -76,19 +76,27 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
 
 
 col1, col2 = st.columns(2)
+big=[]
 imagear = []
-my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+imglst = []
+my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 # my_upload2 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 # my_upload3 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 # my_upload4 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
 
 # # uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+number=0
+for uploaded_file in my_upload:
+    imglst.append(uploaded_file)
+    number+=1
+    if number>=2:
+        imagear.append(uploaded_file)
+big.append(imagear)
+big.append(imglst)
+st.write(big)
 
-# for uploaded_file in my_upload:
-#     bytes_data = uploaded_file.read()
-#     st.write("filename:", uploaded_file.name)
-#     st.write(bytes_data)
+    
 
 if my_upload is not None:
     imageArra = []
