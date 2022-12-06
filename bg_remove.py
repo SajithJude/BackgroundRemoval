@@ -90,7 +90,7 @@ st.write(imagear)
 
 if my_upload is not None:
     fixed = join_images(
-*images,
+*imagear,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
