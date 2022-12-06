@@ -31,7 +31,7 @@ def fix_image(upload):
     new_image.paste(image1,(0,0))
     new_image.paste(image2,(image1_size[0],0))
     col1.write("Original Image :camera:")
-    col1.image(image)
+    col1.image(image1)
 
     fixed = new_image
     col2.write("Fixed Image :wrench:")
