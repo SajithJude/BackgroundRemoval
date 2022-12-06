@@ -80,11 +80,10 @@ imagear = []
 my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 # uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 st.write(imagear)
-for uploaded_file in my_upload:
-    # bytes_data = uploaded_file.read()
-    # st.write("filename:", uploaded_file.name)
-    # st.write(bytes_data)
-    imagear.append(Image.open(uploaded_file))
+# for uploaded_file in my_upload:
+#     # bytes_data = uploaded_file.read()
+#     # st.write(bytes_data)
+#     imagear.append(Image.open(uploaded_file))
 
 # st.write(imagear)
 
