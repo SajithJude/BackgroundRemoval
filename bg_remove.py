@@ -94,7 +94,7 @@ for uploaded_file in my_upload:
         imglst.append(uploaded_file)
     else:
         number+=1
-        imagear.append(uploaded_file)
+    imagear.append(uploaded_file)
 
     
 big.append(imagear)
