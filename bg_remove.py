@@ -86,7 +86,7 @@ for uploaded_file in my_upload:
     # st.write(bytes_data)
     imagear.append(Image.open(uploaded_file))
 
-st.write(imagear)
+# st.write(imagear)
 
 if my_upload is not None:
     fixed = join_images(
