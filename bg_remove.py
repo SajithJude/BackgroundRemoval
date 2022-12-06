@@ -75,11 +75,11 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
     )
 
 # def fix_image(upload):
-join_images(
-*upload,
-bg_color='green',
-alignment=(0.5, 0.5)
-)
+# join_images(
+# *upload,
+# bg_color='green',
+# alignment=(0.5, 0.5)
+# )
     # image1 = Image.open(upload)
     # image2 = Image.open(upload)
     # image1 = image1.resize((426, 240))
@@ -106,7 +106,7 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 
 if my_upload is not None:
     join_images(
-*images,
+*im,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
