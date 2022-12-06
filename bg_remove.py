@@ -109,18 +109,18 @@ alignment=(0.5, 0.5)
 
     # fix_image(upload=my_upload)
 else:
-    
+
     imagearrray=[]
 
     for uploaded_file in uploaded_files:
-    bytes_data = uploaded_file.read()
-    st.write("filename:", uploaded_file.name)
-    imagearrray.append(uploaded_file)
-    fixed = join_images(
-*imagearrray,
-bg_color='green',
-alignment=(0.5, 0.5)
-)
+        bytes_data = uploaded_file.read()
+        st.write("filename:", uploaded_file.name)
+        imagearrray.append(uploaded_file)
+        fixed = join_images(
+    *imagearrray,
+    bg_color='green',
+    alignment=(0.5, 0.5)
+    )
     
 # fixed = new_image
     col2.write("Fixed Image :wrench:")
