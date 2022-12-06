@@ -27,7 +27,7 @@ def convert_image(img):
 
 def join_images(*rows, bg_color=(0, 0, 0, 0), alignment=(0.5, 0.5)):
     rows = [
-        [image.open('RGBA') for image in row]
+        [image.convert('RGBA') for image in row]
         for row
         in rows
     ]
