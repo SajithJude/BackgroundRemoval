@@ -96,9 +96,15 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
 
 
 col1, col2 = st.columns(2)
-my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+imagearrray=[]
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    imagearrray.append(uploaded_file)
+    # st.write(bytes_data)
 
-if my_upload is not None:
+if uploaded_file is not None:
     fixed = join_images(
 *images,
 bg_color='green',
@@ -109,7 +115,7 @@ alignment=(0.5, 0.5)
 else:
 
     fixed = join_images(
-*images,
+*imagearrray,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
