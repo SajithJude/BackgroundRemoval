@@ -4,11 +4,11 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-st.set_page_config(layout="wide", page_title="Image Background Remover")
+st.set_page_config(layout="wide", page_title="Drone image --> aerial image")
 
-st.write("## Remove background from your image")
+st.write("## combine drone images to create an aerial satelite image")
 st.write(
-    ":dog: Try uploading an image to watch the background magically removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
+    "click on the side bar to upload your own set of images and combine multiple of them together :grin:"
 )
 st.sidebar.write("## Upload and download :gear:")
 images = [
@@ -79,7 +79,7 @@ col1, col2 = st.columns(2)
 big=[]
 imagear = []
 imglst = []
-my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
+my_upload = st.sidebar.file_uploader("Upload 4 drone images", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 # my_upload2 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 # my_upload3 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 # my_upload4 = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
