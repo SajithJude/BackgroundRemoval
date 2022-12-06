@@ -101,7 +101,7 @@ st.write(big)
 if my_upload is not None:
     # imageArra = []
     # imageArra.append(Image.open(my_upload))
-    st.write(imageArra)
+    # st.write(imageArra)
     fixed = join_images(
 *images,
 bg_color='green',
