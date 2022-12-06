@@ -25,6 +25,8 @@ def fix_image(upload):
     image1 = Image.open(upload)
     image2 = Image.open(upload)
     image1 = image1.resize((426, 240))
+    image1 = image1.resize((426, 240))
+
     image1_size = image1.size   
     image2_size = image2.size
     new_image = Image.new('RGB',(2*image1_size[0], image1_size[1]), (250,250,250))
