@@ -94,45 +94,26 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
     # col1.image(image1)
     
 
+fixed = new_image
+col2.write("Fixed Image :wrench:")
+col2.image(fixed)
+st.sidebar.markdown("\n")
+st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
+
 
 col1, col2 = st.columns(2)
-uploaded_files = st.sidebar.file_uploader("Choose a CSV file", accept_multiple_files=True)
+my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
-    # st.write(bytes_data)
-
-if uploaded_files is not None:
-    imagearrray=[]
-
-    for uploaded_file in uploaded_files:
-        bytes_data = uploaded_file.read()
-        st.write("filename:", uploaded_file.name)
-        imagearrray.append(Image.open(uploaded_file))
-        st.write(imagearrray)
-        fixed = join_images(
-    *imagearrray,
-    bg_color='green',
-    alignment=(0.5, 0.5)
-    )
-        col2.write("Fixed Image :wrench:")
-        col2.image(fixed)
-        st.sidebar.markdown("\n")
-        st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
-
-
-    
- 
+if my_upload is not None:
+    join_images(
+*imagearray,
+bg_color='green',
+alignment=(0.5, 0.5)
+)
     # fix_image(upload=my_upload)
 else:
-    fixed = join_images(
+    join_images(
 *images,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
-
-
-# fixed = new_image
-    col2.write("Fixed Image :wrench:")
-    col2.image(fixed)
-    st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
-
