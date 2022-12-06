@@ -92,7 +92,7 @@ for uploaded_file in my_upload:
     imglst.append(uploaded_file)
     if number>=3:
         continue
-    imagear.append(uploaded_file)
+        imagear.append(uploaded_file)
     
 big.append(imagear)
 big.append(imglst)
