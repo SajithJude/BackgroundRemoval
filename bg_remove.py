@@ -72,7 +72,7 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
 
 def fix_image(upload):
     fixed = join_images(
-    *images,
+    *upload,
     bg_color='green',
     alignment=(0.5, 0.5)
 )
