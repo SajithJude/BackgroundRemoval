@@ -101,6 +101,18 @@ uploaded_files = st.sidebar.file_uploader("Choose a CSV file", accept_multiple_f
     # st.write(bytes_data)
 
 if uploaded_files is not None:
+    imagearrray=[]
+
+    for uploaded_file in uploaded_files:
+        bytes_data = uploaded_file.read()
+        st.write("filename:", uploaded_file.name)
+        imagearrray.append(Image.open(uploaded_file))
+        fixed = join_images(
+    *imagearrray,
+    bg_color='green',
+    alignment=(0.5, 0.5)
+    )
+    
     fixed = join_images(
 *images,
 bg_color='green',
@@ -109,19 +121,8 @@ alignment=(0.5, 0.5)
 
     # fix_image(upload=my_upload)
 else:
-
-    imagearrray=[]
-
-    for uploaded_file in uploaded_files:
-        bytes_data = uploaded_file.read()
-        st.write("filename:", uploaded_file.name)
-        imagearrray.append(uploaded_file)
-        fixed = join_images(
-    *imagearrray,
-    bg_color='green',
-    alignment=(0.5, 0.5)
-    )
     
+
 # fixed = new_image
     col2.write("Fixed Image :wrench:")
     col2.image(fixed)
