@@ -11,6 +11,10 @@ st.write(
     ":dog: Try uploading an image to watch the background magically removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
 )
 st.sidebar.write("## Upload and download :gear:")
+images = [
+    [Image.open('1.jpg'), Image.open('2.jpg')],
+    [Image.open('3.jpg'), Image.open('4.jpg')],
+]
 
 
 # Download the fixed image
