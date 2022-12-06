@@ -74,37 +74,31 @@ def join_images_vertically(*column, bg_color=(0, 0, 0), alignment=(0.5, 0.5)):
         alignment=alignment
     )
 
-# def fix_image(upload):
-# join_images(
-# *upload,
-# bg_color='green',
-# alignment=(0.5, 0.5)
-# )
-    # image1 = Image.open(upload)
-    # image2 = Image.open(upload)
-    # image1 = image1.resize((426, 240))
-    # image1 = image1.resize((426, 240))
-
-    # image1_size = image1.size   
-    # image2_size = image2.size
-    # new_image = Image.new('RGB',(*image1_size[0], image1_size[1]), (250,250,250))
-    # new_image.paste(image1,(0,0))
-    # new_image.paste(image2,(image1_size[0],0))
-    # col1.write("Original Image :camera:")
-    # col1.image(image1)
-    
-
-# fixed = new_image
 
 col1, col2 = st.columns(2)
-my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+imagear = []
+my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
+# uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+st.write(imagear)
+for uploaded_file in my_upload:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)
+    imagear.append(Image.open(uploaded_file))
+
+st.write(imagear)
 
 if my_upload is not None:
-    join_images(
-*imagearray,
+    fixed = join_images(
+*images,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
+    col2.write("Fixed Image :wrench:")
+    col2.image(fixed)
+    st.sidebar.markdown("\n")
+    st.sidebar.download_button("Download = image", convert_image(fixed), "fixed.png", "image/png")
+
     # fix_image(upload=my_upload)
 else:
     fixed = join_images(
