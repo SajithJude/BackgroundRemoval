@@ -33,7 +33,7 @@ def fix_image(upload):
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    fixed = new_image)
+    fixed = new_image
     col2.write("Fixed Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
