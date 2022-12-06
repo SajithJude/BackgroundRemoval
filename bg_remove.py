@@ -90,7 +90,7 @@ number=0
 for uploaded_file in my_upload:
     imglst.append(uploaded_file)
     number+=1
-    if number>=2:
+    if number>=1:
         imagear.append(uploaded_file)
 big.append(imagear)
 big.append(imglst)
