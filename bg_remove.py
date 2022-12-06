@@ -113,15 +113,15 @@ if uploaded_files is not None:
     alignment=(0.5, 0.5)
     )
     
+ 
+    # fix_image(upload=my_upload)
+else:
     fixed = join_images(
 *images,
 bg_color='green',
 alignment=(0.5, 0.5)
 )
 
-    # fix_image(upload=my_upload)
-else:
-    
 
 # fixed = new_image
     col2.write("Fixed Image :wrench:")
